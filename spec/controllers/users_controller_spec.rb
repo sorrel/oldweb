@@ -61,7 +61,20 @@ describe UsersController do
 
   describe "POST 'create'" do
     describe "failure" do
+      
+      
+      before(:each) do
+        @attr = { :name => "", :email => "", :password => "",
+                  :password_confirmation => "" }
+        @user = Factory.build(:user, @attr)
+        User.stub!(:new).and_return(@user)
+      end
 
+      it "should not save the user" do
+        @user.should_receive(:save).and_return(false)
+        post :create, :user => @attr
+      end
+  
        it "should render the 'new' page" do
          post :create, :user => {}
          response.should render_template('new')
