@@ -75,6 +75,9 @@ describe "Users" do
         controller.should be_signed_in
         click_link "Sign out"
         controller.should_not be_signed_in
+        click_link "Sign in"
+        integration_sign_in user 
+        controller.should be_signed_in
       end
     end
   end
