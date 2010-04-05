@@ -13,6 +13,4 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password
   
   
-  
-  
 end
