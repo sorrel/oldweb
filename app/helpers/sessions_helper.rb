@@ -31,4 +31,13 @@ module SessionsHelper
     #session.delete(:remember_token)
     self.current_user = nil
   end
+  
+  def deny_access
+    flash[:notice] = "Please sign in to access this page."
+    redirect_to signin_path
+  end
+  
+  def current_user?(user)
+    user == current_user
+  end
 end
