@@ -5,3 +5,4 @@ This is the sample application for the book
 by [Michael Hartl](http://www.michaelhartl.com/).
 
 Still testing things for now...
+So for now I'm making these rather pointless changes..
